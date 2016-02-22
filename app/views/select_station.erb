@@ -1,0 +1,13 @@
+<html>
+  <head>
+  </head>
+  <body>
+    <ul id="stations">
+      <% @docking_stations.each do |docking_station| %>
+        <li>
+          <%= docking_station.dock_name %>
+        </li>
+      <% end %>
+    </ul>
+  </body>
+</html
