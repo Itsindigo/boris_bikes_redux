@@ -12,5 +12,4 @@ class BorisUser
     @has_bike = false
     @current_bike = nil
   end
-
 end

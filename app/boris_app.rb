@@ -9,19 +9,33 @@ class BorisApp < Sinatra::Base
     erb :index
   end
 
+  get '/station' do
+    @docking_stations = BorisStation.all
+    erb :station
+  end
+
+  get '/station/:station' do
+    BorisStation.find(dock_name: params[:station])
+    @bs = BorisStation.first(dock_name: params[:station])
+    erb :selected_station
+  end
+
+
   get '/create_station' do
     erb :create_station
   end
 
   post '/create_station' do
     BorisStation.create(dock_name: params[:dock_name],
-                        capacity: params[:capacity])
+                        capacity: params[:capacity],
+                        bikes: params[:capacity])
     redirect '/'
   end
 
-  get '/select_station' do
-    @docking_stations = BorisStation.all
-    erb :select_station
+  post '/create_bike' do
+    BorisBike.create
+
+    redirect '/'
   end
 
   get '/release_bike' do

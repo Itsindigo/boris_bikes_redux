@@ -5,7 +5,7 @@
     <ul id="stations">
       <% @docking_stations.each do |docking_station| %>
         <li>
-          <%= docking_station.dock_name %>
+          <a href="http://localhost:4567/station/<%=docking_station.dock_name%>"><%= docking_station.dock_name %></a>
         </li>
       <% end %>
     </ul>

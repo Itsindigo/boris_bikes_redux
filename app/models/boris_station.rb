@@ -6,10 +6,10 @@ require_relative 'boris_user.rb'
 class BorisStation
   include DataMapper::Resource
 
-  has n, :BorisBikes, through: Resource
+  has n, :BorisBikes
 
   property :id,          Serial
-  property :bikes,       Serial
+  property :bikes,       Integer
   property :dock_name,   String
   property :capacity,    Integer
 
